@@ -1,0 +1,39 @@
+<h2 highlight>Stocks</h2>
+<p>Today is {{today | dateFormatter}}</p>
+<p>{{title}}</p>
+
+<hr>
+
+<div class="mx-auto">
+  <button type="button" class="btn btn-space"
+          (click)="toggleShowStockMarkets()"
+          [ngClass]="{
+            'btn-outline-success': !showStockMarket,
+            'btn-outline-warning': showStockMarket
+          }">
+    {{ showStockMarket? 'Hide Stock Markets' : 'Show Stock Markets'}}
+  </button>
+</div>
+
+<div class="btn-group" role="group" aria-label="Stock Markets"
+     *ngIf="showStockMarket">
+  <button type="button" class="btn-space btn btn-outline-info"
+          *ngFor="let stockMarket of stockMarkets"
+          (click)="selectStockMarket(stockMarket)">
+    {{stockMarket}}
+  </button>
+</div>
+
+<div [ngSwitch]="selectedStockMarket"
+     [ngStyle]="{
+       'color': myColor,
+       'font-size': mySize
+     }">
+  <div *ngSwitchCase="'ASX'"><h2>Australian Sydney Stock Exchange</h2></div>
+  <div *ngSwitchCase="'LSE'"><h2>London Stock Exchange</h2></div>
+  <div *ngSwitchCase="'HKSE'"><h2>Hong Kong Stock Exchange</h2></div>
+  <div *ngSwitchCase="'EURONEXT'"><h2>Europe Stock Exchange</h2></div>
+  <div *ngSwitchCase="'NASDAQ'"><h2>National Association of Securities Dealers Automated Quotations</h2></div>
+  <div *ngSwitchCase="'NYSE'"><h2>New York Stock Exchange</h2></div>
+</div>
+

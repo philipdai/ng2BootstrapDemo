@@ -1,0 +1,49 @@
+{
+  "stocks": [
+    {
+      "stockName": "International Business Machines Inc",
+      "stockCode": "IBM",
+      "id": 1
+    },
+    {
+      "stockName": "Hewlett Packard Inc",
+      "stockCode": "HP",
+      "id": 4
+    },
+    {
+      "stockName": "Tesla Inc",
+      "stockCode": "TSLA",
+      "id": 5
+    },
+    {
+      "stockName": "Apple Computer",
+      "stockCode": "APPL",
+      "id": 6
+    },
+    {
+      "stockName": "Google",
+      "stockCode": "GOOG",
+      "id": 7
+    },
+    {
+      "stockName": "Huawei",
+      "stockCode": "HW",
+      "id": 8
+    },
+    {
+      "stockName": "",
+      "stockCode": "",
+      "id": 9
+    },
+    {
+      "stockName": "",
+      "stockCode": "",
+      "id": 10
+    },
+    {
+      "stockName": "",
+      "stockCode": "",
+      "id": 11
+    }
+  ]
+}

@@ -14,6 +14,7 @@ export class DashboardComponent implements OnInit {
   selectedStock: Stock;
   updateEnabled: boolean = false;
   createNewModal: boolean = false;
+  isDashboardShown: boolean = false;
 
   constructor(private stockService: StockService) { }
 
@@ -58,5 +59,13 @@ export class DashboardComponent implements OnInit {
 
   cancelInitialNewStock() {
     this.createNewModal = false;
+  }
+
+  showDashboard() {
+    this.isDashboardShown = true;
+  }
+
+  hideDashboad() {
+    this.isDashboardShown = false;
   }
 }

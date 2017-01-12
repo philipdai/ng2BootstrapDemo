@@ -31,19 +31,14 @@
       "id": 8
     },
     {
-      "stockName": "",
-      "stockCode": "",
+      "stockName": "British Broadcast Company",
+      "stockCode": "BBC",
       "id": 9
     },
     {
-      "stockName": "",
-      "stockCode": "",
-      "id": 10
-    },
-    {
-      "stockName": "",
-      "stockCode": "",
-      "id": 11
+      "stockName": "Yan Lv Boss",
+      "stockCode": "YLB",
+      "id": 12
     }
   ]
 }

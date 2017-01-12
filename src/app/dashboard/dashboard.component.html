@@ -1,51 +1,4 @@
-<button type="button" class="btn btn-primary pa-2 mt-2 mb-2 ml-2"
-        data-toggle="modal" data-target="#createModal" (click)="initialNewStock();">
-  CREATE STOCK
-</button>
-
-<div class="mx-auto pa-2 mt-2 mb-2" *ngIf="updateEnabled" style="width: 900px">
-  <label for="updateStockName" class="mr-sm-1">Stock Name: </label>
-  <input type="text" #updateStockName [value]="selectedStock.stockName"
-         style="width: 380px;" class="mr-2" id="updateStockName"/>
-  <label for="updateStockCode" class="mr-sm-1">Stock Code:</label>
-  <input type="text" #updateStockCode [value]="selectedStock.stockCode"
-         class="mr-2" id="updateStockCode"/>
-  <button type="button" class="btn btn-warning"
-          (click)="updateStock(updateStockCode.value, updateStockName.value)">SAVE UPDATES</button>
-</div>
-<div class="m-x-auto pa-2" style="width: 100%">
-  <table class="table table-striped center mx-auto">
-    <thead class="thead-inverse">
-    <tr>
-      <th>#</th>
-      <th>OPERATIONS</th>
-      <th>NAME</th>
-      <th>STOCK CODE</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let stock of stocks; let i = index">
-      <td>{{i + 1}}</td>
-      <td>
-        <button type="button" class="btn btn-warning" (click)="loadDetails(stock)">UPDATE</button>
-        <button type="button" class="btn btn-danger" (click)="deleteStock(stock)">DELETE</button>
-      </td>
-      <td>{{stock.stockName}}</td>
-      <td>{{stock.stockCode}}</td>
-    </tr>
-    </tbody>
-  </table>
-</div>
-
-<hr>
-
-<create-stock-modal *ngIf="createNewModal"
-  (onCreateStock)="createStock($event.stockCode, $event.stockName)"
-  (onCreateStock)="cancelInitialNewStock()"
-  [newStock]="newStock">
-</create-stock-modal>
-
-<div class="jumbotron">
+<div class="jumbotron" *ngIf="!isDashboardShown">
   <h1 class="display-3">Financial App!</h1>
   <h2>Stocks, Bonds, Mutual Funds</h2>
   <p class="lead">This is a simple Angular 2 finance web application.</p>
@@ -53,6 +6,64 @@
 
 
   <p class="lead">
-    <a class="btn btn-primary btn-lg" href="#" role="button">START</a>
+    <a class="btn btn-primary btn-lg" role="button" (click)="showDashboard()">START</a>
   </p>
 </div>
+
+<div class="container-fluid" *ngIf="isDashboardShown">
+  <button type="button" class="btn btn-primary pa-2 mt-2 mb-2 ml-2"
+          data-toggle="modal" data-target="#createModal" (click)="initialNewStock();">
+    CREATE STOCK
+  </button>
+
+  <button type="button" class="btn btn-primary pa-2 mt-2 mb-2 ml-2 mr-2 float-right"
+          (click)="hideDashboad();">
+    BACK HOME
+  </button>
+
+  <div class="mx-auto pa-2 mt-2 mb-2" *ngIf="updateEnabled" style="width: 900px">
+    <label for="updateStockName" class="mr-sm-1">Stock Name: </label>
+    <input type="text" #updateStockName [value]="selectedStock.stockName"
+           style="width: 380px;" class="mr-2" id="updateStockName"/>
+    <label for="updateStockCode" class="mr-sm-1">Stock Code:</label>
+    <input type="text" #updateStockCode [value]="selectedStock.stockCode"
+           class="mr-2" id="updateStockCode"/>
+    <button type="button" class="btn btn-warning"
+            (click)="updateStock(updateStockCode.value, updateStockName.value)">SAVE UPDATES</button>
+  </div>
+  <div class="m-x-auto pa-2" style="width: 100%">
+    <table class="table table-striped center mx-auto">
+      <thead class="thead-inverse">
+      <tr>
+        <th>#</th>
+        <th>OPERATIONS</th>
+        <th>NAME</th>
+        <th>STOCK CODE</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let stock of stocks; let i = index">
+        <td>{{i + 1}}</td>
+        <td>
+          <button type="button" class="btn btn-warning" (click)="loadDetails(stock)">UPDATE</button>
+          <button type="button" class="btn btn-danger" (click)="deleteStock(stock)">DELETE</button>
+        </td>
+        <td>{{stock.stockName}}</td>
+        <td>{{stock.stockCode}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <hr>
+
+  <create-stock-modal *ngIf="createNewModal"
+                      (onCreateStock)="createStock($event.stockCode, $event.stockName)"
+                      (onCreateStock)="cancelInitialNewStock()"
+                      (onCancel)="cancelInitialNewStock()"
+                      [newStock]="newStock">
+  </create-stock-modal>
+</div>
+
+
+

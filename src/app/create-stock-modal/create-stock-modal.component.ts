@@ -16,6 +16,7 @@ export class CreateStockModalComponent implements OnInit {
 
   constructor() {
     this.onCreateStock = new EventEmitter();
+    this.onCancel = new EventEmitter();
     this.newStock = new Stock(0, '', '');
   }
 
@@ -31,7 +32,7 @@ export class CreateStockModalComponent implements OnInit {
 
   cancel() {
     this.submitted = false;
-    this.onCreateStock.emit(new Stock(0, '', ''));
+    this.onCancel.emit(new Stock(-1, '', ''));
   }
 
   ngOnInit() {

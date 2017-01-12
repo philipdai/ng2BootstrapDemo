@@ -7,6 +7,7 @@ This project was generated with [angular-cli](https://github.com/angular/angular
 * Enter the unzipped directory
 * Run "npm install"
 * Run "npm install -g json-server"
+* Run "npm install -g angular-cli"
 * Open a terminal in the same directory, run "json-server ./json-server/db.json", which will start up a backend json server, which will response to front end Restful request, and send back corresponding response
 * Open a new terminal in the same directory, run "ng serve"
 * Open a browser, in the url bar, enter "http://localhost:4200/#/", then you can play with it.

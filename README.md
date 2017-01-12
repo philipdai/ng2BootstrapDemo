@@ -3,6 +3,7 @@
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.24.
 
 ## Please run follow steps to run it on your local machine
+* Clone or download the repo file
 * Unzip the file
 * Enter the unzipped directory
 * Run "npm install"

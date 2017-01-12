@@ -1,8 +1,8 @@
 {
   "stocks": [
     {
-      "stockName": "International Business Machines Inc",
-      "stockCode": "IBM",
+      "stockName": "International Business Machines",
+      "stockCode": "IB",
       "id": 1
     },
     {
@@ -26,19 +26,14 @@
       "id": 7
     },
     {
-      "stockName": "Huawei",
-      "stockCode": "HW",
-      "id": 8
-    },
-    {
       "stockName": "British Broadcast Company",
       "stockCode": "BBC",
       "id": 9
     },
     {
-      "stockName": "Yan Lv Boss",
-      "stockCode": "YLB",
-      "id": 12
+      "stockName": "Josh Boss",
+      "stockCode": "JB",
+      "id": 11
     }
   ]
 }

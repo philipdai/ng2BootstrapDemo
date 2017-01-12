@@ -2,6 +2,14 @@
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.24.
 
+The main technologies used are listed below:
+* TypeScript(class, interface, enums etc)
+* Angular 2(component, ng-module, service, pipe, routing, directive, validation etc)
+* ng-cli
+* json-server
+* Bootstrap 4
+* ng-bootstrap
+
 ## Please run follow steps to run it on your local machine (Suggested you have already installed Node.js and npm properly)
 * Clone or download the repo file
 * Unzip the file

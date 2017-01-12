@@ -2,6 +2,14 @@
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.24.
 
+## Please run follow steps to run it on your local machine
+1. Unzip the file
+2. Enter the unzipped directory
+3. Run "npm install"
+4. Open a terminal in the same directory, run "json-server ./json-server/db.json", which will start up a backend json server, which will response to front end Restful request, and send back corresponding response
+5. Open a new terminal in the same directory, run "ng serve"
+6. Open a browser, in the url bar, enter "http://localhost:4200/#/", then you can play with it.
+
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 

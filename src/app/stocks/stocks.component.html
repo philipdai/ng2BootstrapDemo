@@ -14,7 +14,7 @@
 <div class="btn-group" role="group" aria-label="Stock Markets"
      *ngIf="showStockMarket">
   <button type="button" class="btn-space btn btn-outline-info"
-          *ngFor="let stockMarket of stockMarkets | stockFilter"
+          *ngFor="let stockMarket of stockMarkets"
           (click)="selectStockMarket(stockMarket)">
     {{stockMarket}}
   </button>

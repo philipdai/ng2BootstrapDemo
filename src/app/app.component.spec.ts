@@ -2,6 +2,7 @@
 
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { routing } from './app.routing';
 
 describe('AppComponent', () => {
   beforeEach(() => {
@@ -9,6 +10,9 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent
       ],
+      imports: [
+        routing
+      ]
     });
     TestBed.compileComponents();
   });

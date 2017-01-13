@@ -10,6 +10,7 @@ import { MutualfundsComponent } from './mutualfunds/mutualfunds.component';
 import { routing } from './app.routing';
 import {LocationStrategy, HashLocationStrategy} from "@angular/common";
 import { DashboardModule } from './dashboard/dashboard.module';
+
 @NgModule({
   declarations: [
     AppComponent,

@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { NgbAlertModule } from '@ng-bootstrap/ng-bootstrap/alert/alert.module';
 import { DashboardComponent } from './dashboard.component';
 import { CreateStockModalComponent } from '../create-stock-modal/create-stock-modal.component';
+import { PipesModule } from '../pipes/pipes.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { CreateStockModalComponent } from '../create-stock-modal/create-stock-mo
   imports: [
     CommonModule,
     FormsModule,
-    NgbAlertModule
+    NgbAlertModule,
+    PipesModule
   ],
   exports: [
     DashboardComponent

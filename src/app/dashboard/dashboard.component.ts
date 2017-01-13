@@ -10,13 +10,16 @@ import { Stock } from '../models/stock';
 export class DashboardComponent implements OnInit {
   @Input() newStock: Stock;
 
+  filterString: string;
   stocks: Stock[];
   selectedStock: Stock;
   updateEnabled: boolean = false;
   createNewModal: boolean = false;
   isDashboardShown: boolean = false;
 
-  constructor(private stockService: StockService) { }
+  constructor(private stockService: StockService) {
+    this.filterString = '';
+  }
 
   ngOnInit() {
     this.getAllStocks();

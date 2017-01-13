@@ -14,7 +14,6 @@
 
   <hr class="m-y-2">
 
-
   <p class="lead">
     <a class="btn btn-primary btn-lg" role="button" (click)="showDashboard()">START</a>
   </p>
@@ -25,12 +24,14 @@
           data-toggle="modal" data-target="#createModal" (click)="initialNewStock();">
     CREATE STOCK
   </button>
-
   <button type="button" class="btn btn-primary pa-2 mt-2 mb-2 ml-2 mr-2 float-right"
           (click)="hideDashboad();">
     BACK HOME
   </button>
-
+  <input class="form-control mt-2 mb-2 ml-2 mr-2 clearfix"
+         type="text"
+         placeholder="Search Stock Name or Code Here"
+         [(ngModel)]="filterString"/>
   <div class="mx-auto pa-2 mt-2 mb-2" *ngIf="updateEnabled" style="width: 900px">
     <label for="updateStockName" class="mr-sm-1">Stock Name: </label>
     <input type="text" #updateStockName [value]="selectedStock.stockName"
@@ -52,7 +53,7 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let stock of stocks; let i = index">
+      <tr *ngFor="let stock of stocks | stockFilter: filterString; let i = index">
         <td>{{i + 1}}</td>
         <td>
           <button type="button" class="btn btn-warning" (click)="loadDetails(stock)">UPDATE</button>

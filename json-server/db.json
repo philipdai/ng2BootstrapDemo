@@ -34,6 +34,11 @@
       "stockName": "Josh Boss",
       "stockCode": "JB",
       "id": 11
+    },
+    {
+      "stockName": "American Advisor",
+      "stockCode": "AA",
+      "id": 12
     }
   ]
 }

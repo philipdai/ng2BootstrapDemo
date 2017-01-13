@@ -3,8 +3,9 @@
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.24.
 
 The main technologies used are listed below:
-* TypeScript(class, interface, enums etc)
+* TypeScript(class, interface, enums, promise etc)
 * Angular 2(component, ng-module, service, pipe, routing, directive, validation etc)
+* rxjs (observable, subscribe etc)
 * ng-cli
 * json-server
 * Bootstrap 4

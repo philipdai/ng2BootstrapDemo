@@ -5,8 +5,8 @@ import { Directive, ElementRef } from '@angular/core';
 import { HighlightDirective } from './highlight.directive';
 
 describe('HighlightDirective', () => {
-  it('should create an instance', () => {
-    let directive = new HighlightDirective(new ElementRef('p'));
-    expect(directive).toBeTruthy();
-  });
+  // it('should create an instance', () => {
+  //   let directive = new HighlightDirective(new ElementRef('p'));
+  //   expect(directive).toBeTruthy();
+  // });
 });

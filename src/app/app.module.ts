@@ -8,7 +8,7 @@ import { ServicesModule } from './services/services.module';
 import { AppComponent } from './app.component';
 import { MutualfundsComponent } from './mutualfunds/mutualfunds.component';
 import { routing } from './app.routing';
-import {LocationStrategy, HashLocationStrategy} from "@angular/common";
+import { LocationStrategy, HashLocationStrategy } from "@angular/common";
 import { DashboardModule } from './dashboard/dashboard.module';
 
 @NgModule({

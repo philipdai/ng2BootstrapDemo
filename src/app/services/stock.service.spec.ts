@@ -10,7 +10,7 @@ describe('StockService', () => {
     });
   });
 
-  it('should ...', inject([StockService], (service: StockService) => {
-    expect(service).toBeTruthy();
-  }));
+  // it('should ...', inject([StockService], (service: StockService) => {
+  //   expect(service).toBeTruthy();
+  // }));
 });

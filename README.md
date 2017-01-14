@@ -4,7 +4,7 @@ This project was generated with [angular-cli](https://github.com/angular/angular
 
 The main technologies used are listed below:
 * TypeScript(class, interface, enums, promise etc)
-* Angular 2(component, ng-module, service, pipe, routing, directive, validation etc)
+* Angular 2(component, ng-module, service, pipe, routing, directive, validation, unit tests etc)
 * rxjs (observable, subscribe etc)
 * ng-cli
 * json-server

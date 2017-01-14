@@ -2,6 +2,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { NgbAlertModule } from '@ng-bootstrap/ng-bootstrap/alert/alert.module';
 
 import { CreateStockModalComponent } from './create-stock-modal.component';
 
@@ -11,7 +13,11 @@ describe('CreateStockModalComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CreateStockModalComponent ]
+      declarations: [ CreateStockModalComponent ],
+      imports: [
+        FormsModule,
+        NgbAlertModule.forRoot()
+      ]
     })
     .compileComponents();
   }));
@@ -22,7 +28,7 @@ describe('CreateStockModalComponent', () => {
     fixture.detectChanges();
   });
 
-  // it('should create', () => {
-  //   expect(component).toBeTruthy();
-  // });
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
 });

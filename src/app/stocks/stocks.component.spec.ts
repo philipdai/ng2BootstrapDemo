@@ -2,8 +2,15 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
-
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { NgbAlertModule } from '@ng-bootstrap/ng-bootstrap/alert/alert.module';
+import { CommonModule } from '@angular/common';
+import { DirectivesModule } from '../directives/directives.module';
+import { PipesModule } from '../pipes/pipes.module';
 import { StocksComponent } from './stocks.component';
+import { ServicesModule } from '../services/services.module';
+import { HttpModule } from '@angular/http';
 
 describe('StocksComponent', () => {
   let component: StocksComponent;
@@ -11,7 +18,17 @@ describe('StocksComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ StocksComponent ]
+      declarations: [ StocksComponent ],
+      imports: [
+        CommonModule,
+        DirectivesModule,
+        PipesModule,
+        FormsModule,
+        NgbAlertModule.forRoot(),
+        BrowserModule,
+        ServicesModule,
+        HttpModule
+      ]
     })
     .compileComponents();
   }));
@@ -22,7 +39,7 @@ describe('StocksComponent', () => {
     fixture.detectChanges();
   });
 
-  // it('should create', () => {
-  //   expect(component).toBeTruthy();
-  // });
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
 });

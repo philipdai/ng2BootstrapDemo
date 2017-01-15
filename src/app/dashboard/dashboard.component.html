@@ -31,7 +31,8 @@
   <input class="form-control mt-2 mb-2 mr-2 clearfix"
          type="text"
          placeholder="Search Stock Name or Code Here"
-         [(ngModel)]="filterString"/>
+         [(ngModel)]="filterString"
+         (click)="filterString = '';"/>
   <div class="mx-auto pa-2 mt-2 mb-2" *ngIf="updateEnabled" style="width: 900px">
     <label for="updateStockName" class="mr-sm-1">Stock Name: </label>
     <input type="text" #updateStockName [value]="selectedStock.stockName"
@@ -43,7 +44,8 @@
             (click)="updateStock(updateStockCode.value, updateStockName.value)">SAVE UPDATES</button>
   </div>
   <div class="m-x-auto pa-2" style="width: 100%">
-    <table class="table table-striped center mx-auto">
+    <table class="table table-striped center mx-auto"
+           *ngIf="(stocks | stockFilter: filterString | withParent).length > 0">
       <thead class="thead-inverse">
       <tr>
         <th>#</th>
@@ -53,17 +55,20 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let stock of stocks | stockFilter: filterString; let i = index">
+      <tr *ngFor="let stock of stocks | stockFilter: filterString | withParent; let i = index;">
         <td>{{i + 1}}</td>
         <td>
-          <button type="button" class="btn btn-warning" (click)="loadDetails(stock)">UPDATE</button>
-          <button type="button" class="btn btn-danger" (click)="deleteStock(stock)">DELETE</button>
+          <button type="button" class="btn btn-warning" (click)="loadDetails(stock.item)">UPDATE</button>
+          <button type="button" class="btn btn-danger" (click)="deleteStock(stock.item)">DELETE</button>
         </td>
-        <td>{{stock.stockName}}</td>
-        <td>{{stock.stockCode}}</td>
+        <td>{{stock.item.stockName}}</td>
+        <td>{{stock.item.stockCode}}</td>
       </tr>
       </tbody>
     </table>
+    <div *ngIf="(stocks | stockFilter: filterString | withParent).length === 0">
+      No found stock
+    </div>
   </div>
 
   <hr>

@@ -15,7 +15,7 @@
           <div class="form-group">
             <label for="newStockName">Stock Name</label>
             <input type="text" id="newStockName" name="newStockName" class="form-control"
-                   [(ngModel)]="newStock.stockName" placeholder="Stock Name"
+                   [ngModel]="newStock.stockName" placeholder="Stock Name"
                    #newStockName="ngModel" required>
             <ngb-alert [type]="'danger'"
                        [hidden]="newStockName.valid || newStockName.pristine">
@@ -25,7 +25,7 @@
           <div class="form-group">
             <label for="newStockCode">Stock Code:</label>
             <input type="text" id="newStockCode" name="newStockCode" class="form-control"
-                   [(ngModel)]="newStock.stockCode" placeholder="Stock Code"
+                   [ngModel]="newStock.stockCode" placeholder="Stock Code"
                    #newStockCode="ngModel" required/>
             <ngb-alert [type]="'danger'"
                        [hidden]="newStockCode.valid || newStockCode.pristine">

@@ -2,7 +2,7 @@
   "stocks": [
     {
       "stockName": "International Business Machines",
-      "stockCode": "IB",
+      "stockCode": "IBM",
       "id": 1
     },
     {
@@ -21,24 +21,29 @@
       "id": 6
     },
     {
-      "stockName": "Google",
-      "stockCode": "GOOG",
-      "id": 7
-    },
-    {
       "stockName": "British Broadcast Company",
       "stockCode": "BBC",
       "id": 9
     },
     {
-      "stockName": "Josh Boss",
-      "stockCode": "JB",
-      "id": 11
-    },
-    {
       "stockName": "American Advisor",
       "stockCode": "AA",
       "id": 12
+    },
+    {
+      "stockName": "Waqas Big Boss",
+      "stockCode": "WBB",
+      "id": 13
+    },
+    {
+      "stockName": "Ai Bi Bi",
+      "stockCode": "ABB",
+      "id": 14
+    },
+    {
+      "stockName": "as",
+      "stockCode": "aa",
+      "id": 15
     }
   ]
 }

@@ -15,21 +15,22 @@
   <hr class="m-y-2">
 
   <p class="lead">
-    <a class="btn btn-primary btn-lg" role="button" (click)="showDashboard()">START</a>
+    <a class="btn btn-primary btn-lg" role="button" (click)="showDashboard()" id="start">START</a>
   </p>
 </div>
 
 <div class="container-fluid" *ngIf="isDashboardShown">
-  <button type="button" class="btn btn-primary pa-2 mt-2 mb-2 ml-2"
+  <button type="button" class="btn btn-primary pa-2 mt-2 mb-2 ml-2" id="create-stock"
           data-toggle="modal" data-target="#createModal" (click)="initialNewStock();">
     CREATE STOCK
   </button>
   <button type="button" class="btn btn-primary pa-2 mt-2 mb-2 ml-2 mr-2 float-right"
-          (click)="hideDashboad();">
+          (click)="hideDashboad();" id="back-home">
     BACK HOME
   </button>
   <input class="form-control mt-2 mb-2 mr-2 clearfix"
          type="text"
+         id="query-string"
          placeholder="Search Stock Name or Code Here"
          [(ngModel)]="filterString"
          (click)="filterString = '';"/>
@@ -40,7 +41,7 @@
     <label for="updateStockCode" class="mr-sm-1">Stock Code:</label>
     <input type="text" #updateStockCode [value]="selectedStock.stockCode"
            class="mr-2" id="updateStockCode"/>
-    <button type="button" class="btn btn-warning"
+    <button type="button" class="btn btn-warning" id="save-updates"
             (click)="updateStock(updateStockCode.value, updateStockName.value)">SAVE UPDATES</button>
   </div>
   <div class="m-x-auto pa-2" style="width: 100%">
@@ -55,14 +56,14 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let stock of stocks | stockFilter: filterString | withParent; let i = index;">
+      <tr *ngFor="let stock of stocks | stockFilter: filterString | withParent; let i = index;" id="row-{{i}}">
         <td>{{i + 1}}</td>
         <td>
-          <button type="button" class="btn btn-warning" (click)="loadDetails(stock.item)">UPDATE</button>
-          <button type="button" class="btn btn-danger" (click)="deleteStock(stock.item)">DELETE</button>
+          <button type="button" class="btn btn-warning" (click)="loadDetails(stock.item)" id="update-{{i}}">UPDATE</button>
+          <button type="button" class="btn btn-danger" (click)="deleteStock(stock.item)" id="delete-{{i}}">DELETE</button>
         </td>
-        <td>{{stock.item.stockName}}</td>
-        <td>{{stock.item.stockCode}}</td>
+        <td id="stock-name-{{i}}">{{stock.item.stockName}}</td>
+        <td id="stock-code-{{i}}">{{stock.item.stockCode}}</td>
       </tr>
       </tbody>
     </table>

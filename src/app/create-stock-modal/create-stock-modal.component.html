@@ -5,7 +5,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h3 class="modal-title mt-2">Add a New Stock</h3>
-        <button type="button" class="close" data-dismiss="modal"
+        <button type="button" class="close" data-dismiss="modal" id="cancel-x"
                 (click)="cancel();" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -15,7 +15,7 @@
           <div class="form-group">
             <label for="newStockName">Stock Name</label>
             <input type="text" id="newStockName" name="newStockName" class="form-control"
-                   [ngModel]="newStock.stockName" placeholder="Stock Name"
+                   [ngModel]="newStock.stockName" placeholder="Stock Name" id="new-stock-name"
                    #newStockName="ngModel" required>
             <ngb-alert [type]="'danger'"
                        [hidden]="newStockName.valid || newStockName.pristine">
@@ -25,7 +25,7 @@
           <div class="form-group">
             <label for="newStockCode">Stock Code:</label>
             <input type="text" id="newStockCode" name="newStockCode" class="form-control"
-                   [ngModel]="newStock.stockCode" placeholder="Stock Code"
+                   [ngModel]="newStock.stockCode" placeholder="Stock Code" id="new-stock-code"
                    #newStockCode="ngModel" required/>
             <ngb-alert [type]="'danger'"
                        [hidden]="newStockCode.valid || newStockCode.pristine">
@@ -37,11 +37,11 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal"
-                (click)="cancel();">Close</button>
+                (click)="cancel();" id="cancel">Close</button>
         <button type="submit" class="btn btn-primary"
                 (click)="createStock(newStockCode, newStockName);"
                 [disabled]="!stockForm.form.valid"
-                data-dismiss="modal">Add Stock</button>
+                data-dismiss="modal" id="add-stock">Add Stock</button>
       </div>
     </div>
   </div>

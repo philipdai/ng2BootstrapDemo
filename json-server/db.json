@@ -44,6 +44,11 @@
       "stockName": "as",
       "stockCode": "aa",
       "id": 15
+    },
+    {
+      "stockName": "Information Control Company",
+      "stockCode": "ICC",
+      "id": 16
     }
   ]
 }

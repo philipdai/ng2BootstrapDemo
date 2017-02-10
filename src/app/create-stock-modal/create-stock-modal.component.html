@@ -18,7 +18,8 @@
                    [ngModel]="newStock.stockName" placeholder="Stock Name" id="new-stock-name"
                    #newStockName="ngModel" required>
             <ngb-alert [type]="'danger'"
-                       [hidden]="newStockName.valid || newStockName.pristine">
+                       [hidden]="newStockName.valid || newStockName.pristine"
+                       id="error-msg-stockname">
               Please enter the value for the Stock Name
             </ngb-alert>
           </div>
@@ -28,7 +29,8 @@
                    [ngModel]="newStock.stockCode" placeholder="Stock Code" id="new-stock-code"
                    #newStockCode="ngModel" required/>
             <ngb-alert [type]="'danger'"
-                       [hidden]="newStockCode.valid || newStockCode.pristine">
+                       [hidden]="newStockCode.valid || newStockCode.pristine"
+                       id="error-msg-stockcode">
               Please enter the value for the Stock Code
             </ngb-alert>
           </div>
